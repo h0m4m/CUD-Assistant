@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #EFEFEF;
+}
+
+
+
+#Navigation{
+    background-color: #ffffff;
+    width: calc(100% - 100px);
+    height: 100px;
+    border-radius: 0 0 40px 40px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    color: #E03B3B;
+    font-size: 22px;  
+    padding: 0 50px;  
+    font-weight: 700;
+}
+
+.CUD_Nav_Logo_Cont{
+    width: auto;
+    height: 100%;
+}
+
+.CUD_Nav_Logo{
+    height: 100%;
+}
+
+.Nav_burger{
+    font-size: 40px;
+    cursor: pointer;
+}
+
