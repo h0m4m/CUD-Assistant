@@ -33,8 +33,90 @@ body {
     height: 100%;
 }
 
-.Nav_burger{
+.Burger_Menu{
     font-size: 40px;
     cursor: pointer;
 }
 
+#Main_Page{
+   
+    width: calc(100% - 700px);
+    height: calc(100vh - 100px);
+    padding: 0 350px;
+
+}
+
+
+#Chat_Section{
+
+    height: 75%;
+    overflow-y: auto;
+}
+
+#Messaging_Section{
+   
+    height: 25%;    
+}
+
+.Messaging_Commands_Section{
+    height: 30%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 0 20px;
+    gap: 20px;
+    margin-bottom: 15px;
+    
+}
+
+.Messaging_Command{
+    width: 100%;    
+    background-color: #E03B3B;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+}
+.Scholarship_Command{
+    width: 145px;
+}
+
+.Messaging_User_Input_Section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.User_Input_Cont{
+    display: flex;
+    padding: 15px 25px 15px 15px;
+    width: calc(100% - 40px);
+    border-radius: 16px;
+    background-color: #ffffff;
+    
+
+}
+
+.User_Input{
+    width: calc(100%);
+    padding: 8px;
+    border: none;
+    outline: none;  
+    font-size: 16px;
+    font-weight: 650;
+    font-family: 'DM Sans', sans-serif;
+
+
+}
+
+
+
+.send_button{
+   font-size: 30px;
+   transform: rotate(30deg);
+   cursor: pointer;
+}
