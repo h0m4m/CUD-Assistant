@@ -156,8 +156,13 @@ button{
     font-weight: 700;
     border: none;
     cursor: pointer;
-
+    transition: transform 0.2s ease-in-out;
 }
+
+.Messaging_Command:hover{
+    transform:translateY(-5px);
+}
+
 .Scholarship_Command{
     width: 145px;
 }
@@ -172,6 +177,7 @@ button{
     padding: 15px 25px 15px 15px;
     width: calc(100% - 40px);
     border-radius: 16px;
+    box-shadow: 4px 2px 5px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
     background-color: #ffffff;
 }
 
@@ -252,14 +258,57 @@ button{
 
 .New_Convo_And_Delete_All_Cont button{
     background: none;
-    border: 2px solid black;
+    border: 2px solid rgb(45, 45, 45);
     height: 50px;
     border-radius: 14px;
+    transition: all 0.2s ease-in-out;
+}
+
+.New_Convo_And_Delete_All_Cont button:hover{
+    background-color: rgb(45, 45, 45);
+    color: #a7a7a7;
 }
 
 #New_Convo_Button{
     width: 25%;
 }
+
+#New_Convo_Button .tooltiptext {
+    visibility: hidden;
+    opacity: 0.5;
+    transform: translateY(5px);
+    width: 90px;
+    background-color: rgb(45, 45, 45);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 70px;
+    left: 70px;
+    margin-left: -60px;
+    font-family: "DM Sans";
+    font-weight: 5  00;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  #New_Convo_Button .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+  }
+  
+  #New_Convo_Button:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
 #Delete_All_Convos_Button{
     width: 75%;
 
