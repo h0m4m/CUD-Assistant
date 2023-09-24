@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
-
-html{
+html {
     height: 100%;
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -10,40 +10,47 @@ body {
     height: 100%;
 }
 
-button{
+button {
     cursor: pointer;
 }
 
 input,
 textarea,
 button,
-select{
+select {
     -webkit-tap-highlight-color: transparent;
 }
 
 
 /* width */
+
 *::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* Track */
-  *::-webkit-scrollbar-track {
+}
+
+
+/* Track */
+
+*::-webkit-scrollbar-track {
     background: none;
-  }
-  
-  /* Handle */
-  *::-webkit-scrollbar-thumb {
+}
+
+
+/* Handle */
+
+*::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 12px;
-  }
-  
-  /* Handle on hover */
-  *::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
+}
 
-#Navigation{
+
+/* Handle on hover */
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#Navigation {
     background-color: #ffffff;
     width: 97%;
     height: 100px;
@@ -53,12 +60,12 @@ select{
     text-align: center;
     font-family: 'DM Sans', sans-serif;
     color: #E03B3B;
-    font-size: 22px;  
-    padding: 0 3% 0 0;  
+    font-size: 22px;
+    padding: 0 3% 0 0;
     font-weight: 700;
 }
 
-.blurscreen{
+.blurscreen {
     z-index: 25;
     position: fixed;
     top: 0;
@@ -69,7 +76,7 @@ select{
     transition: all 0.2s ease-in-out;
 }
 
-.Left_panel_icon_open_cont{
+.Left_panel_icon_open_cont {
     background-color: #E03B3B;
     width: 90px;
     height: 50px;
@@ -85,88 +92,127 @@ select{
     z-index: 30;
 }
 
-
-.CUD_Nav_Logo_Cont{
+.CUD_Nav_Logo_Cont {
     width: auto;
     height: 100%;
 }
 
-.CUD_Nav_Logo{
+.CUD_Nav_Logo {
     height: 100%;
 }
 
-
-
 .hamburger {
     cursor: pointer;
-  }
-  
-  .hamburger input {
+}
+
+.hamburger input {
     display: none;
-  }
-  
-  .hamburger svg {
+}
+
+.hamburger svg {
     /* The size of the SVG defines the overall size */
     height: 3em;
     /* Define the transition for transforming the SVG */
     transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .line {
+}
+
+.line {
     fill: none;
     stroke: white;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: 3;
     /* Define the transition for transforming the Stroke */
-    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-                stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .line-top-bottom {
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
     stroke-dasharray: 12 63;
-  }
-  
-  .hamburger input:checked + svg {
+}
+
+.hamburger input:checked+svg {
     transform: rotate(-45deg);
-  }
-  
-  .hamburger input:checked + svg .line-top-bottom {
+}
+
+.hamburger input:checked+svg .line-top-bottom {
     stroke-dasharray: 20 300;
     stroke-dashoffset: -32.42;
-  }
-  
+}
 
-#Main_Page{ 
+#Main_Page {
     width: 50%;
     height: calc(100% - 100px);
     padding: 0 25%;
 }
 
-
-#Chat_Section{
+#Chat_Section {
     position: relative;
     width: 100%;
-    height: calc(100% - 150px);
+    height: calc(100% - 190px);
     overflow-y: auto;
+    padding: 25px 15px 0px 15px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-direction: column;
 }
 
-#Messaging_Section{
-    height: 150px;    
+.User_Message {
+    height: Auto;
+    max-width: 45.67%;
+    background-color: #ffffff;
+    position: relative;
+    align-self: flex-end;
+    color: #000000;
+    border-radius: 12px 12px 0 12px;
+    box-shadow: 4px 2px 5px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    padding: 15px;
+    font-family: "DM Sans";
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.User_Message::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    margin-left: 0px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #ffffff #ffffff;
+}
+
+.User_Message::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 100%;
+    margin-left: 2px;
+    width: 10px;
+    height: 5px;
+    background-color: rgba(0, 0, 0, .1);
+    filter: blur(5px);
+    transform: rotate(80deg);
+    z-index: -1;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, .1);
+}
+
+#Messaging_Section {
+    height: 150px;
     position: sticky;
 }
 
-.Messaging_Commands_Section{
+.Messaging_Commands_Section {
     height: 30%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 0 20px;
     gap: 20px;
     margin-bottom: 15px;
-    
 }
 
-.Messaging_Commands_Section_small{
+.Messaging_Commands_Section_small {
     height: 30%;
     display: none;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -175,8 +221,8 @@ select{
     margin-bottom: 15px;
 }
 
-.Messaging_Command{
-    width: 100%;    
+.Messaging_Command {
+    width: 100%;
     background-color: #E03B3B;
     border-radius: 16px;
     display: flex;
@@ -192,20 +238,21 @@ select{
     transition: transform 0.2s ease-in-out;
 }
 
-.Messaging_Command:hover{
-    transform:translateY(-5px);
+.Messaging_Command:hover {
+    transform: translateY(-5px);
 }
 
-.Scholarship_Command{
+.Scholarship_Command {
     width: 145px;
 }
 
-.Messaging_User_Input_Section{
+.Messaging_User_Input_Section {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.User_Input_Cont{
+
+.User_Input_Cont {
     display: flex;
     padding: 15px 25px 15px 15px;
     width: calc(100% - 40px);
@@ -214,32 +261,30 @@ select{
     background-color: #ffffff;
 }
 
-.User_Input{
+.User_Input {
     width: calc(100%);
     padding: 8px;
     border: none;
-    outline: none;  
+    outline: none;
     font-size: 16px;
     font-weight: 650;
     font-family: 'DM Sans', sans-serif;
-
-
 }
 
-.send_button{
+.send_button {
     background: none;
     outline: none;
     border: none;
     z-index: 20;
 }
 
-.send_button_icon{
-   font-size: 30px;
-   transform: rotate(30deg);
-   cursor: pointer;
+.send_button_icon {
+    font-size: 30px;
+    transform: rotate(30deg);
+    cursor: pointer;
 }
 
-#Slider_Menu{
+#Slider_Menu {
     position: absolute;
     top: 0;
     left: -300px;
@@ -250,8 +295,7 @@ select{
     z-index: 30;
 }
 
-
-.Top_Slider_Side{
+.Top_Slider_Side {
     background-color: #eaeaea;
     position: relative;
     width: auto;
@@ -259,11 +303,9 @@ select{
     display: flex;
     padding: 0 21px 0 25px;
     justify-content: space-between;
-
-
 }
 
-.Top_Slider_Side button{
+.Top_Slider_Side button {
     border: none;
     background: none;
     outline: none;
@@ -272,32 +314,29 @@ select{
     font-family: 'DM Sans';
     font-weight: 700;
     cursor: pointer;
-
 }
 
-.Student_Profile p{
+.Student_Profile p {
     font-size: 18px;
     margin: 0;
 }
 
-.Slider_Menu_Closing_Button i{
+.Slider_Menu_Closing_Button i {
     color: #000000;
     font-size: 24px;
-
 }
 
-.Main_Slider_Side{
+.Main_Slider_Side {
     height: calc(100vh - 150px);
-
 }
 
-.New_Convo_And_Delete_All_Cont{
+.New_Convo_And_Delete_All_Cont {
     display: flex;
     gap: 10px;
     padding: 25px 25px 0 25px;
 }
 
-.New_Convo_And_Delete_All_Cont button{
+.New_Convo_And_Delete_All_Cont button {
     background: none;
     border: 2px solid rgb(45, 45, 45);
     height: 50px;
@@ -305,12 +344,12 @@ select{
     transition: all 0.2s ease-in-out;
 }
 
-.New_Convo_And_Delete_All_Cont button:hover{
+.New_Convo_And_Delete_All_Cont button:hover {
     background-color: rgb(45, 45, 45);
     color: #a7a7a7;
 }
 
-#New_Convo_Button{
+#New_Convo_Button {
     width: 25%;
 }
 
@@ -330,11 +369,11 @@ select{
     left: 70px;
     margin-left: -60px;
     font-family: "DM Sans";
-    font-weight: 5  00;
+    font-weight: 5 00;
     transition: all 0.1s ease-in-out;
-  }
-  
-  #New_Convo_Button .tooltiptext::after {
+}
+
+#New_Convo_Button .tooltiptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -343,32 +382,32 @@ select{
     border-width: 5px;
     border-style: solid;
     border-color: rgb(45, 45, 45) transparent transparent transparent;
-  }
-  
-  #New_Convo_Button:hover .tooltiptext {
+}
+
+#New_Convo_Button:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
-  }
-#Delete_All_Convos_Button{
-    width: 75%;
-
 }
 
-.Delete_All_Convos_Text{
+#Delete_All_Convos_Button {
+    width: 75%;
+}
+
+.Delete_All_Convos_Text {
     font-family: "DM Sans";
     font-weight: 500;
     font-size: 16px;
 }
 
-.Past_Convo_Buttons_Cont{
+.Past_Convo_Buttons_Cont {
     display: flex;
     flex-direction: column;
     gap: 20px;
     overflow-y: auto;
 }
 
-.Past_Convo_Buttons{
+.Past_Convo_Buttons {
     border: none;
     outline: none;
     background-color: #FFFFFF;
@@ -379,10 +418,9 @@ select{
     font-family: "DM Sans";
     font-weight: 500;
     font-size: 15px;
-
 }
 
-.Past_Convos_Section{
+.Past_Convos_Section {
     margin-top: 20px;
     padding: 25px;
     height: calc(100% - 95px);
@@ -390,83 +428,66 @@ select{
 }
 
 @media only screen and (max-width: 1312px) {
-    .Messaging_Commands_Section{
+    .Messaging_Commands_Section {
         display: none;
     }
-    .Messaging_Commands_Section_small{
+    .Messaging_Commands_Section_small {
         display: grid;
         gap: 5px;
     }
-    .Scholarship_Command{
+    .Scholarship_Command {
         width: auto;
     }
-
 }
 
 @media only screen and (max-width: 960px) {
-    #Main_Page{
+    #Main_Page {
         width: 70%;
         padding: 0 15%;
     }
 }
 
-@media only screen and (max-width: 660px) {
-
-}
+@media only screen and (max-width: 660px) {}
 
 @media only screen and (max-width: 560px) {
-    #Main_Page{
+    #Main_Page {
         width: 80%;
         padding: 0 10%;
     }
-
-
-
-    
 }
 
 @media only screen and (max-width: 480px) {
-    .Messaging_Commands_Section_small{
-    grid-template-columns: 1fr 1fr;
-    height: 40%;
-
-        }
-        #Chat_Section{
-
-            height: calc(100% - 180px);
-        }
-        
-        #Messaging_Section{
-            height: 180px;    
-        }
-    
-        #Navigation{
-            font-size: 18px;  
-        }
-        
-        .Left_panel_icon_open_cont{
-            width: 75px;
-            height: 42px;
-        }
-        
-        
-        .CUD_Nav_Logo_Cont{
-            width: auto;
-            height: 75%;
-        }
+    .Messaging_Commands_Section_small {
+        grid-template-columns: 1fr 1fr;
+        height: 40%;
+    }
+    #Chat_Section {
+        height: calc(100% - 180px);
+    }
+    #Messaging_Section {
+        height: 180px;
+    }
+    #Navigation {
+        font-size: 18px;
+    }
+    .Left_panel_icon_open_cont {
+        width: 75px;
+        height: 42px;
+    }
+    .CUD_Nav_Logo_Cont {
+        width: auto;
+        height: 75%;
+    }
 }
 
 @media only screen and (max-width: 375px) {
-    #Slider_Menu{
+    #Slider_Menu {
         width: 275px;
     }
-
 }
 
 @media only screen and (max-width: 330px) {
-    #Slider_Menu{
+    #Slider_Menu {
         width: 250px;
     }
 }
-
-
