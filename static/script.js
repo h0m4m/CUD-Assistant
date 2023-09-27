@@ -89,5 +89,55 @@ window.addEventListener("resize", updateElementStyles);
 // Initial call to updateElementStyles to set the initial state
 updateElementStyles();
 
-// Rest of your code...
 
+
+const send_button_icon = document.querySelector(".send_button_icon");
+
+// Rest of your code...
+const Chat_Section = document.querySelector("#Chat_Section");
+const User_Input = document.querySelector(".User_Input");
+const send_button = document.querySelector(".send_button");
+
+
+User_Input.addEventListener("input", ()=>{
+    if(User_Input.value == ""){
+        send_button_icon.src = "static/img/mapleleaficonoutline.png";
+    }
+    else{
+        send_button_icon.src = "static/img/mapleleaficonfill.png";
+    }
+});
+
+function addMessage(message, isUserMessage) {
+  const messageDiv = document.createElement("div");
+
+  if (isUserMessage) {
+    messageDiv.classList.add("User_Message");
+
+  } else {
+    messageDiv.classList.add("AI_Message");
+  }
+
+  messageDiv.innerHTML = message;
+
+    Chat_Section.appendChild(messageDiv);
+    Chat_Section.scrollTo(0, Chat_Section.scrollHeight);
+}
+
+function sendMessage() {
+    const message = User_Input.value.trim();
+
+    if (message !== "") {
+      addMessage(message, true);
+      User_Input.value = "";
+    }
+  }
+
+send_button.addEventListener("click", sendMessage);
+User_Input.addEventListener("keydown", event => {
+
+    if(event.keyCode === 13 && !event.shiftKey){
+        event.preventDefault();
+        sendMessage();
+    }
+});

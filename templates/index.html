@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+    <title>CUD BOT</title>
+    <meta discreption="disc">
+</head>
+<div class="blurscreenelement"></div>
+<nav id="Navigation">
+    <button class="Left_panel_icon_open_cont">
+                    <label class="hamburger">
+                        <input type="checkbox">
+                        <svg viewBox="0 0 32 32">
+                            <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                            <path class="line" d="M7 16 27 16"></path>
+                        </svg>
+                    </label>
+                </button>
+
+    <div class="Nav_Title_Cont">
+        <h1 class="Nav_Title">CUD Assistant</h1>
+    </div>
+    <div class="CUD_Nav_Logo_Cont">
+        <a href="https://www.cud.ac.ae/" target="_blank"> <img src="{{ url_for('static', filename='img/cudlogo.jpg') }}" class="CUD_Nav_Logo"></a>
+    </div>
+</nav>
+
+<section id="Slider_Menu">
+    <div class="Top_Slider_Side">
+        <button class="Student_Profile">
+                    <span class="Student_Profile_Info">
+                        <p class="Student_Profile_Info_Name">Mohamad Mourad</p>
+                        <p class="Student_Profile_Info_ID">20210001904</p>
+                    </span>
+                </button>
+        </button>
+    </div>
+    <div class="Main_Slider_Side">
+        <div class="New_Convo_And_Delete_All_Cont">
+            <button id="New_Convo_Button">
+                        <i class="fa-solid fa-plus"></i>
+                        <span class="tooltiptext">Start New Chat!</span>
+                    </button>
+            <button id="Delete_All_Convos_Button">
+                        <span class="Delete_All_Convos_Text">clear all</span>
+                    </button>
+        </div>
+        <div class="Past_Convos_Section">
+            <div class="Past_Convo_Buttons_Cont">
+                <button class="Past_Convo_Buttons">
+                        bla bla bla bla
+                    </button>
+                <button class="Past_Convo_Buttons">
+                        bla bla bla bla
+                    </button>
+                <button class="Past_Convo_Buttons">
+                        bla bla bla bla
+                    </button>
+                <button class="Past_Convo_Buttons">
+                        bla bla bla bla
+                    </button>
+                <button class="Past_Convo_Buttons">
+                        bla bla bla bla
+                    </button>
+                <button class="Past_Convo_Buttons">
+                        bla bla bla bla
+                    </button>
+                <button class="Past_Convo_Buttons">
+                        bla bla bla bla
+                    </button>
+                <button class="Past_Convo_Buttons">
+                        bla bla bla bla
+                    </button>
+                <button class="Past_Convo_Buttons">
+                        bla bla bla bla
+                    </button>
+
+
+                <button class="Past_Convo_Buttons">
+                        bla bla bla bla
+                    </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="Main_Page">
+    <section id="Chat_Section">
+        <div class="User_Message">
+            Hello, message testing looool xdxdxd ok bye ali is 7abiby ok bye fr
+        </div>
+        <div class="User_Message">
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        </div>
+        <div class="AI_Message">
+            Please ask me a question :>
+            Hello, message testing looool xdxdxd ok bye ali is 7abiby ok bye fr
+        </d>
+    </section>
+    <section id="Messaging_Section">
+        <div class="Messaging_Commands_Section">
+            <button class="Messaging_Command">
+                        <span> What programs are available? </span>
+                    </button>
+            <button class="Messaging_Command">
+                        <div class="Scholarship_Command"> <span> Which scholarships do you offer?  </span></div>
+                       
+                    </button>
+            <button class="Messaging_Command">
+                        <span> How is the student life? </span>
+                    </button>
+            <button class="Messaging_Command">
+                        <span> Whom may i contact?  </span>
+                    </button>
+        </div>
+        <div class="Messaging_Commands_Section_small">
+            <button class="Messaging_Command">
+                        <span> Programs </span>
+                    </button>
+            <button class="Messaging_Command">
+                        <div class="Scholarship_Command"> <span> Scholarships  </span></div>
+                       
+                    </button>
+            <button class="Messaging_Command">
+                        <span> Student Life </span>
+                    </button>
+            <button class="Messaging_Command">
+                        <span> Contacts  </span>
+                    </button>
+        </div>
+        <div class="Messaging_User_Input_Section">
+            <div class="User_Input_Cont">
+                <input class="User_Input" placeholder="Ask me anything..">
+                <button class="send_button"><img src="{{ url_for('static', filename='img/mapleleaficonoutline.png') }}" class="send_button_icon"></button>
+
+            </div>
+
+        </div>
+    </section>
+</section>
+
+</body>
+<!-- send_button_icon -->
+</html>
