@@ -6,7 +6,8 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: #EFEFEF;
+    background: rgb(179,179,179);
+    background: linear-gradient(360deg, rgba(179,179,179,1) 2%, rgba(208,208,208,1) 12%, rgba(239,239,239,1) 23%);
     height: 100%;
 }
 
@@ -550,7 +551,10 @@ select {
         font-size: 14px;
     }
     .send_button_icon{
-        font-size: 25px;
+        width: 25px;
+    }
+    .User_Message, .AI_Message{
+        font-size: 15px;
     }
 }
 

@@ -131,8 +131,26 @@ function sendMessage() {
       addMessage(message, true);
       User_Input.value = "";
     }
-  }
 
+    fetch("/api", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message })
+      })
+        .then(response => response.json())
+        .then(data => {
+
+            const content = data.content;
+            addMessage(content, False);
+        })
+        .catch(error => console.error(error));
+    }
+
+
+
+    
 send_button.addEventListener("click", sendMessage);
 User_Input.addEventListener("keydown", event => {
 
