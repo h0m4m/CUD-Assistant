@@ -1,7 +1,7 @@
 const side_panel = document.querySelector("#Slider_Menu");
 const checkbox = document.querySelector('input[type="checkbox"]');
 const Left_panel = document.querySelector(".Left_panel_icon_open_cont");
-const Nav_Title_Cont = document.querySelector('.Nav_Title_Cont'); 
+const Nav_Title_Cont = document.querySelector('.Nav_Title_Cont');
 const CUD_Nav_Logo_Cont = document.querySelector('.CUD_Nav_Logo_Cont');
 const blurscreen = document.querySelector('.blurscreenelement');
 
@@ -19,33 +19,31 @@ Left_panel.addEventListener("click", () => {
 
     // Toggle the panel open/close
     if (panel_open_toggle === false) {
-        if(window.innerWidth < 427){
+        if (window.innerWidth < 427) {
             blurscreen.classList.add("blurscreen");
         }
 
 
-        if(window.innerWidth <= 660){
+        if (window.innerWidth <= 660) {
             Nav_Title_Cont.style.display = "none";
             CUD_Nav_Logo_Cont.style.display = "none";
         }
-        side_panel.style.left = "0px";  
-        if(window.innerWidth < 375 && window.innerWidth > 330){
+        side_panel.style.left = "0px";
+        if (window.innerWidth < 375 && window.innerWidth > 330) {
             Left_panel.style.marginLeft = "275px";
-        }
-        else if(window.innerWidth < 330){
+        } else if (window.innerWidth < 330) {
             Left_panel.style.marginLeft = "250px";
-        }
-        else{
+        } else {
             Left_panel.style.marginLeft = "300px";
         }
 
         panel_open_toggle = true;
     } else {
 
-        if(window.innerWidth < 427){
+        if (window.innerWidth < 427) {
             blurscreen.classList.remove("blurscreen");
         }
-        if(window.innerWidth <= 660){
+        if (window.innerWidth <= 660) {
             Nav_Title_Cont.style.display = "block";
             CUD_Nav_Logo_Cont.style.display = "block";
         }
@@ -69,16 +67,14 @@ label.addEventListener("click", () => {
 // Function to update the element styles based on window width
 function updateElementStyles() {
     if (window.innerWidth <= 660) {
-        if(side_panel.style.left == "0px"){
+        if (side_panel.style.left == "0px") {
             Nav_Title_Cont.style.display = "none";
             CUD_Nav_Logo_Cont.style.display = "none";
-        }
-        else{
+        } else {
             Nav_Title_Cont.style.display = "block";
             CUD_Nav_Logo_Cont.style.display = "block";
         }
-    }
-    else{
+    } else {
         Nav_Title_Cont.style.display = "block";
         CUD_Nav_Logo_Cont.style.display = "block";
     }
@@ -99,26 +95,25 @@ const User_Input = document.querySelector(".User_Input");
 const send_button = document.querySelector(".send_button");
 
 
-User_Input.addEventListener("input", ()=>{
-    if(User_Input.value == ""){
+User_Input.addEventListener("input", () => {
+    if (User_Input.value == "") {
         send_button_icon.src = "static/img/mapleleaficonoutline.png";
-    }
-    else{
+    } else {
         send_button_icon.src = "static/img/mapleleaficonfill.png";
     }
 });
 
 function addMessage(message, isUserMessage) {
-  const messageDiv = document.createElement("div");
+    const messageDiv = document.createElement("div");
 
-  if (isUserMessage) {
-    messageDiv.classList.add("User_Message");
+    if (isUserMessage) {
+        messageDiv.classList.add("User_Message");
 
-  } else {
-    messageDiv.classList.add("AI_Message");
-  }
+    } else {
+        messageDiv.classList.add("AI_Message");
+    }
 
-  messageDiv.innerHTML = message;
+    messageDiv.innerHTML = message;
 
     Chat_Section.appendChild(messageDiv);
     Chat_Section.scrollTo(0, Chat_Section.scrollHeight);
@@ -128,33 +123,33 @@ function sendMessage() {
     const message = User_Input.value.trim();
 
     if (message !== "") {
-      addMessage(message, true);
-      User_Input.value = "";
+        addMessage(message, true);
+        User_Input.value = "";
     }
 
     fetch("/api", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ message })
-      })
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ message })
+        })
         .then(response => response.json())
         .then(data => {
 
             const content = data.content;
-            addMessage(content, False);
+            addMessage(content, false);
+            console.log(content);
         })
-        .catch(error => console.error(error));
-    }
+}
 
 
 
-    
+
 send_button.addEventListener("click", sendMessage);
 User_Input.addEventListener("keydown", event => {
 
-    if(event.keyCode === 13 && !event.shiftKey){
+    if (event.keyCode === 13 && !event.shiftKey) {
         event.preventDefault();
         sendMessage();
     }
