@@ -1,2 +1,9 @@
-omakkkkk
-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
+Dr Said's office is 118G.
+Dr Said teaches data mining.
+Dr Tamer's office is 15G.
+Dr Tamer teaches discrete math.
+Dr Seyam's office is in 220.
+Dr Seyam teaches Lab.
+Dr Seyam likes apples.
+The dean office is in 320.
+Adeeb is Said's favourite student.
